@@ -228,60 +228,6 @@
 
 
 
-
-
- .container4.show-popup .product {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .container4.show-popup .product__overlay {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  
-    .container4.show-popup {
-    display: flex;
-    
-  }
-  
-  
-  .container4 {
-  
-  max-width: 1250px;
-  border-radius: 6px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-height: 960px;
-  height: 90vh;
-  width: 100%;
-
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  z-index: 9999;
-  transition: opacity 0.3s ease-in-out;
-  
-  scroll-behavior: smooth;
-  background-color: #f6f5f7;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
-}
-
-.container4.visible {
-  display: block;
-}
-
-
-
-
-
-
-
 @media (max-width: 980px) {
   .container {
     max-height: none;
@@ -799,6 +745,59 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+#openPopup {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#popupContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+#popupText {
+  text-align: justify;
+}
+
+#closePopup {
+  margin-top: 10px;
+}
+
+
+
+
 </style>
 
 
@@ -916,7 +915,7 @@ Every time you light one of our cigars, you are immersed in a world of captivati
                         <figure class="grid-figure">
                             <img src="img/collection/9.png" alt="Soft Cotton Blouse">
                            
-                            <figcaption class="pricetag" onclick="showPopup4()">TOBACO - <span class="price">LUCERO</span></figcaption> 
+                            <figcaption class="pricetag">TOBACO - <span class="price">LUCERO</span></figcaption> 
                         </figure>
                     </div>    
                     
@@ -1469,62 +1468,53 @@ Every time you light one of our cigars, you are immersed in a world of captivati
                 
                 
                 
-                
-                
-                
-                
-                      
-                <div class="container4">
-  <div class="nav">
-    <div class="logo">
-      <img class="svg-image" src="https://cdn.glitch.global/c536c49d-7661-4fd9-81b8-918d12539028/logo-sanchez2.svg" alt="Descripción de la imagen">
+          <div class="product__overlay"></div>       
+          
+          
+          
+          <div id="popupOverlay">
+  <div id="popupContent">
+    <div id="popupText">
+      
+       <h2>SANCHEZ CIGARS</h2>
+      <p>Terms and conditions</p>
+      <p>LEGAL</p>
+      <p>SANCHEZ CIGARS ON THIS SITE ARE NOT INTENDED FOR ANYONE UNDER THE AGE OF 21.</p>
+      
+    
+      <p>Prices subject toachange without notice. Not responsible for typographical errors*. We reserve the right to limit quantities. Special orders for related merchandise can be filled upon request. We reserve the right to reject any order for any reason. No order shall be binding at Sanchez Cigars until we accept it. Items may be purchased from this website using a valid credit card or Paypal for payment. Shipping of items will be by UPS or USPS. Items must be shipped to an address where a person is available to sign for and receive said items. These terms and conditions of sale and the transactions contemplated thereby are governed solely by the laws of the State of Florida, and any and all claims related thereto must be brought and finally resolved solely in the courts of the State of Florida. By placing an order, you agree to all foregoing terms and conditions.</p>
+      <p>We comply with all current Florida tobacco laws & taxes. Outside of the state Florida, USA, taxes, tax compliance and/or all custom and duties are the responsibility of the individual customer. We are not responsible for any local laws and/or regulations at P the destination.</p>
+      <p>All transactions are FOB Miami, Florida. Please refer to our complete shipping rules.</p>
+      <p>SECURITY</p>
+      <p>We guarantee that every transaction you make at www.sanchezcigar.com will be 100% safe. Our secure server software (SSL) is the industry standard and among the best software available today for secure commerce transactions. It encrypts all of your personal information, including credit card number, name and address, so that it cannot be read as the information travels over the Internet. All bells and whistles of the cutting edge technology are being employed on this website for your safety. Your information is extremely important to us and we take extra effort to guarantee your transaction's safety and this commitment. We employ independent security services that monitor the website 24/7 and provide alerts for any breach.</p>
+      <p>PRIVACY</p>
+      <p>The information we collect will be used to notify customers about updates to our web site and periodic specials. We do not share the information with other organizations for any purpose.</p>
+      <p>DISCLAIMERS</p>
+      <p>We reserve the right to cancel and fully refund the customer in any case of a typographical error or honest mistake that is clearly obvious that occurred on our web site. We will always try our best to accommodate any customer that was offended in such case in an amicable solution but sometimes we simply can't ship in this situation.</p>
+      <p>All gift certificates must be mailed back to us in order to be redeemed. You must make a purchase to redeem a gift certificate.</p>
+      <p>Brands that are promoted with a gift certificate for every box, the box must contain at least 20 Sanchez cigars. Boxes with 19 cigars or less require a purchase of two boxes.</p>
+      <p>On brands with a discounted second box/bundle, the second box/bundle must be of equal or lesser value than the first box/bundle.</p>
+      <p>Application of gift certificate credit is subject to the "Gift Certificate Program" restrictions.</p>
+      <p>Samplers and free items - While we make every attempt to fill every order according to specified items, we sometimes have an "out of stock" situation. We reserve the right to substitute items with equal or better value items.</p>
+      <p>Samplers - In samplers that include Sanchez cigars from different brands we reserve the right to replace a specific cigar with equal or higher value substitute.</p>
+      <p>colors, shades, size and other physical features of Sanchez cigars displayed on this web site may look bigger, smaller or otherwise different than the actual Sanchez cigars we sell</p>
+      <p>RETURN POLICY</p>
+      <p>All returned items must be pre-approved with authorization by email. All returns must be in the original packaging and "new" condition as all merchandise shipped from our warehouse leaves here in perfect condition. All gift items must be included together with the returned items. If the gift item is not included in the return, it's value will be deducted from the credit for the returned item. In the unlikely event that you should doubt the quality of an item, you must notify us within 72 hours of receiving the merchandise to obtain a written return Authorization Number. Merchandise that will be returned or refused without authorization, will be subject to 50% restocking fee or $15 whichever is more. "Collector items", lighters or limited edition items are not returnable. Sanchez Cigar Samplers, Double Stacks, Sanchez Cigar Combos and Triple Deckers are not returnable. Once you have obtained an Authorization Number, you should mark it clearly on the package next to the address label. All returns will be reviewed and subjected to applicable restocking fee and shipping charge as all returns cannot be resold. Buyers remorse is not accepted for any returns. All Mike's Cigars orders are automatically processed by our secure merchant processor and sent for shipment as soon as possible. During this process, we incur irreversible fees as part of the shipping process, and as such, we are unfortunately unable to cancel orders free of charge. All orders that are cancelled before shipping has occurred, will be assessed a 7% cancellation fee (or a minimum of $10) before any credit is issued. An order will not be considered for cancellation after it has shipped. It will be treated as a return with all applicable fees.</p>
+      <p>FRESHNESS GUARANTEE</p>
+      <p>We take quality control very seriously. All the Sanchez cigars we ship are shipped either in sealed boxes or, in case of single sticks or 5-packs, in properly sealed bags. Most cigars in our samplers are super-premium Sanchez cigars and we do everything to guarantee freshness upon arrival.</p>
+      <p>All Sanchez Cigars orders are shipped from our state-of-the-art climate controlled warehouse in Florida.</p>
+      <p>And all the Sanchez cigars are hermetically packed in humidity sealed-in zip-loc with patented WATER-PILLOW packets inside the package to guarantee freshness.</p>
+      <p>With that said please let me add that shipping individual Sanchez cigars to the pacific north-west by GROUND service is not recommended, especially in the summer By exposing the Sanchez cigars to the hot conditions in regular postal service or U.P.S. trucks we sacrifice all of the benefits described above.</p>
+      <p>We strongly recommend to purchase the Sanchez cigars in the ORIGINAL box that was packed and sealed at the factory, and ship cross country by AIR not by ground.</p>
+    
     </div>
-    <div class="nav__text">Sanchez Cigar</div>
-    <div class="nav__cart">
-      <svg class="nav__shop" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
-      </svg>
-    </div>
+    <button id="closePopup">Accept</button>
   </div>
-  <div class="cover4"></div>
- 
-  <div class="product" data-index="0">
-  <button class="closeButton" onclick="closePopup4()">Close</button>
-    <div class="product__new"></div>
-    <img class="product__img" src="https://cdn.glitch.global/c536c49d-7661-4fd9-81b8-918d12539028/g9927.png"/>
-    <div class="product__brand">LUCERO</div>
-    <div class="product__title">MINI"</div>
-    <div class="product__price">$33,95</div>
-    <div class="product__buttons" style="--delay: 0.2s"></div>
-    <div class="product__subtitle">
-
-
-<p>COUNTRY: Nicaragua</p>
-    <p>WRAPPERS: Sumatra</p>
-    <p>BINDER: Nicaragua</p>
-    <p>FILLER: Nicaragua</p>
-    <p>STRENGHT: Medium to Full</p>
-  
-    </div>
-    
-   
-    
-    
-    <div class="product__detail">
-  <a href="https://api.whatsapp.com/send/?phone=%2B17867571595&text=I+am+interested+in+Tobacco+LUCERO+MINI&type=phone_number&app_absent=0">BUY NOW</a>
 </div>
 
-  </div>
-  
-  
-  
 
-                
-                
-                
-          <div class="product__overlay"></div>                                
+          
+                                   
             </section>
 
 
@@ -1548,16 +1538,20 @@ Every time you light one of our cigars, you are immersed in a world of captivati
                     <div class="heading-tiny">HELP</div>
                     <ul>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Customer service</a></li>
-                        <li><a href="#">Transport &amp; Parcels</a></li>
-                        <li><a href="#">Terms and conditions</a></li>
+                   
+                        
+                        <button id="openPopup">Terms & Conditions</button>
+
+
+
+                        
+                        
                     </ul>
                 </div>    
                 <div class="col-1-of-5 footer__social">
                     <div class="heading-tiny">Our social networks</div>
                     <ul>
-                        <li><a href="">Twitter</a></li>
-                        <li><a href="">Facebook</a></li>
+                       
                         <li><a href="https://instagram.com/sanchezcigar">Instagram</a></li>
                     </ul>
                 </div>
@@ -1565,7 +1559,7 @@ Every time you light one of our cigars, you are immersed in a world of captivati
                     <p>
                         For more information, please feel free to contact us at the following email address: sanchezcigars@gmail.com. We would be delighted to assist you and provide any additional details you may require.
                     </p>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sanchezcigar@gmail.com" class="btn btn-full">E-Mail</a>    
+                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sanchezcigar@gmail.com" class="btn btn-full">E-Mail</a>     
                 </div>
             </div>
             <a href ="#"><img src="img/logo.svg" alt="Lavender Boutique logo" class="footer__logo"></a>
@@ -1575,6 +1569,26 @@ Every time you light one of our cigars, you are immersed in a world of captivati
                 
             </div>
         </footer>
+
+
+
+
+
+<script>
+
+const openPopupButton = document.getElementById('openPopup');
+const closePopupButton = document.getElementById('closePopup');
+const popupOverlay = document.getElementById('popupOverlay');
+
+openPopupButton.addEventListener('click', function() {
+  popupOverlay.style.display = 'flex';
+});
+
+closePopupButton.addEventListener('click', function() {
+  popupOverlay.style.display = 'none';
+});
+
+</script>
 
 
 
@@ -1679,43 +1693,6 @@ Every time you light one of our cigars, you are immersed in a world of captivati
   
   </script>
     
-    
-    
-    
-    
-    
-    
-    
-     <script>
-
-  
-    function showPopup4() {
-      // Obtener el contenedor del pop-up
-      var container = document.querySelector('.container4');
-
-      // Establecer la propiedad 'display' en 'flex'
-      container.style.display = 'flex';
-    }
-
-    function hidePopup() {
-      // Obtener el contenedor del pop-up
-      var container = document.querySelector('.container4');
-
-      // Establecer la propiedad 'display' en 'none'
-      container.style.display = 'none';
-    }
-    
-    
-    
-    function closePopup4() {
-  var container4 = document.querySelector(".container4");
-  container4.style.display = "none";
-}
-
-
-
-  
-  </script>
     
     
     

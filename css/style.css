@@ -1,35 +1,24 @@
 /*
 0-480px: Small Phones 
-480 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
+480 - 600px: Phone
 
+600 - 900px: Tablet portrait
+602 - 730px: Samsung Note 10
+900 - 1200px: Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + : Big desktop
 
 1em = 16px
 */
+
 /*
 COLORS:
-
 Light purple: #b6afec   
 Medium purple: #8982db
 Dark purple: #4d40b2
 Green: #d2e188
 Cream: #fff8de
-
-
-
-
-
-
-
-
-
-
-
 */
-
 
 .ac-overlay {
   box-sizing: border-box;
@@ -175,18 +164,47 @@ Cream: #fff8de
   border: 1px solid #ccc;
   width: 14px;
   height: 14px;
-  border-radius: 7px;
-  display: inline-block;
-  color: #FF1F1F;
-  font-weight: bold;
+  border-radius: 100%;
+  position: absolute;
+  top: 7px;
+  right: -5px;
+  line-height: 14px;
+  color: #666;
   text-align: center;
-  margin-right: 5px;
-  line-height: 13px;
-  position: relative;
-  top: -2px;
-  text-shadow: 1px 1px 0 #fff;
-  font-family: arial;
+  font-weight: bold;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
+
+.ac-container .errors li:hover span {
+  box-sizing: border-box;
+  background: #b83f3b;
+  color: #fff;
+}
+
+.ac-container .errors li:hover span:before {
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background: #b83f3b;
+  top: 6px;
+  left: 4px;
+}
+
+/* Estilos para la resolución de 602px a 730px */
+@media only screen and (min-width: 602px) and (max-width: 730px) {
+  .ac-container {
+    width: 90%;
+  }
+}
+
+
+
+
+
 
 .ac-container .fields {
   box-sizing: border-box;
@@ -923,96 +941,89 @@ input[type=submit]:active {
 .section-best,
 .section-collections {
   position: relative;
-  padding: 8rem 20rem; }
-  @media only screen and (max-width: 75em) {
-    .section-about,
-    .section-new,
-    .section-best,
-    .section-collections {
-      padding: 8rem 15rem; } }
-  @media only screen and (max-width: 56.25em) {
-    .section-about,
-    .section-new,
-    .section-best,
-    .section-collections {
-      padding: 8rem 10rem; } }
-  @media only screen and (max-width: 37.5em) {
-    .section-about,
-    .section-new,
-    .section-best,
-    .section-collections {
-      padding: 6rem 4rem; } }
-  .section-about .row,
-  .section-new .row,
-  .section-best .row,
-  .section-collections .row {
-    position: relative; }
-  .section-about .btn,
-  .section-new .btn,
-  .section-best .btn,
-  .section-collections .btn {
-    position: absolute;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-    margin-top: 1.6rem; }
+  padding: 8rem 20rem;
+}
+
+@media only screen and (max-width: 75em) {
+  .section-about,
+  .section-new,
+  .section-best,
+  .section-collections {
+    padding: 8rem 15rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .section-about,
+  .section-new,
+  .section-best,
+  .section-collections {
+    padding: 8rem 10rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .section-about,
+  .section-new,
+  .section-best,
+  .section-collections {
+    padding: 6rem 4rem;
+  }
+}
+
+@media only screen and (max-width: 202px) {
+  .section-about,
+  .section-new,
+  .section-best,
+  .section-collections {
+    padding: 4rem 2rem;
+  }
+}
 
 .section-about {
-  padding-bottom: 2rem; }
-  .section-about__heading h2 {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0; }
-  .section-about .btn {
-    z-index: 1; }
+  padding-bottom: 2rem;
+}
+
+.section-about__heading h2 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section-about .btn {
+  z-index: 1;
+}
 
 .decor-left {
   width: 9vw;
   position: absolute;
   bottom: -10rem;
   left: -3.5rem;
-  -webkit-transform-origin: 10% 90%;
-          transform-origin: 10% 90%;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out; }
-  @media only screen and (max-width: 75em) {
-    .decor-left {
-      bottom: -15rem; } }
+  transform-origin: 10% 90%;
+  transition: all 0.5s ease-out;
+}
+
+@media only screen and (max-width: 75em) {
+  .decor-left {
+    bottom: -15rem;
+  }
+}
 
 .decor-right {
   width: 9vw;
   position: absolute;
   bottom: -30rem;
   right: -2rem;
-  -webkit-transform-origin: 80% 90%;
-          transform-origin: 80% 90%; }
-  @media only screen and (max-width: 75em) {
-    .decor-right {
-      bottom: -15rem; } }
+  transform-origin: 80% 90%;
+}
+
+@media only screen and (max-width: 75em) {
+  .decor-right {
+    bottom: -15rem;
+  }
+}
 
 .section-collections {
-  padding-bottom: 15rem; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  padding-bottom: 15rem;
+}
